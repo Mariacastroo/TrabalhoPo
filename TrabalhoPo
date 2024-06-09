@@ -1,0 +1,59 @@
+
+import java.util.ArrayList;
+
+public class Livro {
+    private String titulo;
+    private String autor;
+    private int numeroPaginas;
+
+    public Livro(String titulo, String autor, int numeroPaginas) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.numeroPaginas = numeroPaginas;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+}
+
+public class Biblioteca {
+    private String colecaoLivros;
+
+    public Biblioteca() {
+        this.colecaoLivros = new colecaoLivros();
+    }
+
+    public void adicionarLivro(Livro livro) {
+        if (livro != null) {
+            colecaoLivros.add(livro);
+        } else {
+            System.out.println("O objeto passado não é um Livro.");
+        }
+    }
+
+    public void listarLivros() {
+        for (Livro livro : colecaoLivros) {
+            System.out.priintln("Título: " + livro.getTitulo() + ", Autor: " + livro.getAutor() + ", Número de Páginas: " + livro.getNumeroPaginas());
+        }
+    }
+    
+    public Livro getLivroNaBiblioteca(String titulo) {
+        for (Livro livro : colecaoLivros) {
+            if (livro.getTitulo().equals(titulo)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+}
+
+
